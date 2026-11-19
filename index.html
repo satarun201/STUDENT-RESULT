@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Result Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>Student Result Management System</h1><button class="ghost noprint" id="logout" hidden>Log out</button></header>
+<main>
+<section id="login" class="card">
+  <div class="tabs"><button class="on" id="tS">Student</button><button class="ghost" id="tA">Admin</button></div>
+  <label for="u" id="uL">Roll number</label><input id="u" autocomplete="username">
+  <label for="p">Password</label><input id="p" type="password" autocomplete="current-password">
+  <p class="err" id="err"></p>
+  <button id="in">Log in</button>
+  <p><small>Demo logins - Admin: admin / admin123. Student: roll 24BCA001, password 24BCA001 (a student's password is their roll number).</small></p>
+</section>
+
+<section id="admin" class="hide">
+  <div class="card">
+    <h2>Add or update a result</h2>
+    <label for="roll">Roll number</label><input id="roll">
+    <label for="nm">Student name</label><input id="nm">
+    <div class="marks" id="mk"></div>
+    <p class="err" id="aerr"></p>
+    <button id="save">Save result</button>
+  </div>
+  <div class="card scroll"><h2>All students</h2><table><thead><tr><th>Roll</th><th>Name</th><th>Total</th><th>%</th><th>Result</th><th></th></tr></thead><tbody id="rows"></tbody></table></div>
+</section>
+
+<section id="student" class="hide card">
+  <div id="report"></div>
+  <p class="noprint"><button id="print">Print report card</button></p>
+</section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
